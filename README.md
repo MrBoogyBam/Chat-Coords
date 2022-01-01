@@ -3,8 +3,4 @@ Chat Coords is a minecraft mod that allows you to send your current coordinates 
 
 # Controls
 Send Coordinates = N
-<<<<<<< HEAD
-<p style="font-size: 10px">Controls can be changed in keybind settings
-=======
 <p style="font-size: 10px">Controls can be changed in keybind settings</p>
->>>>>>> refs/remotes/origin/main
