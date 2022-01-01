@@ -36,7 +36,7 @@ public class ChatCoordsClient implements ClientModInitializer {
                 yRounded = String.format("%.0f", y);
                 zRounded = String.format("%.0f", z);
 
-                String coords = xRounded + ", " + yRounded + ", " + zRounded;
+                String coords = "x" + xRounded + ", " + "y" + yRounded + ", " + "z" + zRounded;
 
                 assert MinecraftClient.getInstance().player != null;
                 MinecraftClient.getInstance().player.sendChatMessage(coords);

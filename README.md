@@ -1,10 +1,6 @@
-# Fabric Example Mod
+# Chat Coords
+Chat Coords is a minecraft mod that allows you to send your current coordinates in the chat to all the players instead of having to type it out
 
-## Setup
-
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
-# Chat-Coords
+# Controls
+Send Coordinates = N
+<p style="font-size: 10px">Controls can be changed in keybind settings
