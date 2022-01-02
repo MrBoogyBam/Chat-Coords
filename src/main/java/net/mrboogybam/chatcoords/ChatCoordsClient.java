@@ -15,6 +15,7 @@ public class ChatCoordsClient implements ClientModInitializer {
     public String xRounded;
     public String yRounded;
     public String zRounded;
+    public String currentDimension;
 
     @Override
     public void onInitializeClient() {
@@ -36,7 +37,16 @@ public class ChatCoordsClient implements ClientModInitializer {
                 yRounded = String.format("%.0f", y);
                 zRounded = String.format("%.0f", z);
 
-                String coords = "x" + xRounded + ", " + "y" + yRounded + ", " + "z" + zRounded;
+                assert MinecraftClient.getInstance().world != null;
+                if(MinecraftClient.getInstance().world.getRegistryKey().getValue().toString().equals("minecraft:overworld")) {
+                    currentDimension = "Overworld";
+                } else if(MinecraftClient.getInstance().world.getRegistryKey().getValue().toString().equals("minecraft:the_nether")) {
+                    currentDimension = "Nether";
+                } else if(MinecraftClient.getInstance().world.getRegistryKey().getValue().toString().equals("minecraft:the_end")) {
+                    currentDimension = "End";
+                }
+
+                String coords = "x" + xRounded + ", " + "y" + yRounded + ", " + "z" + zRounded + ", " + currentDimension;
 
                 assert MinecraftClient.getInstance().player != null;
                 MinecraftClient.getInstance().player.sendChatMessage(coords);
