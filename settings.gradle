@@ -1,5 +1,10 @@
 pluginManagement {
     repositories {
+    	maven {
+    		name = 'Quilt'
+    		url = 'https://maven.quiltmc.org/repository/release'
+    	}
+    	// TODO: remove this whenever this is no longer a dependency
         maven {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
