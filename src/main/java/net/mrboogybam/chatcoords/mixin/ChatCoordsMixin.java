@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ChatCoordsMixin {
     @Inject(at = @At("HEAD"), method = "init()V")
     private void init(CallbackInfo info) {
-        ChatCoords.LOGGER.info("This line is printed by an example mod mixin!");
+        // ChatCoords.LOGGER.info("This line is printed by THE chat coords mixin!");
     }
 }
