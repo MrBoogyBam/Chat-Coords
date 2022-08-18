@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
 
 public class ChatCoordsClient implements ClientModInitializer {
@@ -49,7 +50,7 @@ public class ChatCoordsClient implements ClientModInitializer {
                 String coords = "x" + xRounded + ", " + "y" + yRounded + ", " + "z" + zRounded + ", " + currentDimension;
 
                 assert MinecraftClient.getInstance().player != null;
-                MinecraftClient.getInstance().player.sendChatMessage(coords);
+                MinecraftClient.getInstance().player.sendChatMessage(coords, null);
             }
         });
     }
