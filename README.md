@@ -7,7 +7,7 @@ Chat Coords is a Minecraft mod that allows players to easily share their current
 - Customizable keybind for sending coordinates
 
 ## Installation & Usage
-1. Install the Chat Coords mod that is compatible with your preferred mod loader (Forge, Fabric, etc.)
+1. Install the Chat Coords mod that is compatible with your preferred mod loader (Only available for Fabric as of right now)
 2. In-game, press the keybind (default is N) to send your current coordinates and dimension to the chat.
 3. The coordinates will be displayed in the format (x, y, z) and the dimension will be indicated with "Overworld", "Nether", or "End".
 
