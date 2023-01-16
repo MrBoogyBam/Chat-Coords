@@ -50,7 +50,7 @@ public class ChatCoordsClient implements ClientModInitializer {
                 String coords = "x" + xRounded + ", " + "y" + yRounded + ", " + "z" + zRounded + ", " + currentDimension;
 
                 assert MinecraftClient.getInstance().player != null;
-                MinecraftClient.getInstance().player.sendChatMessage(coords, null);
+                MinecraftClient.getInstance().player.sendMessage(Text.of(coords));
             }
         });
     }
