@@ -6,7 +6,8 @@
   "name": "Chat Coords",
   "description": "Sends your coordinates in the chat with the press of a button.",
   "authors": [
-    "MrBoogyBam"
+    "MrBoogyBam",
+    "ZimonIsHim"
   ],
   "contact": {
     "sources": "https://github.com/MrBoogyBam/Chat-Coords"
