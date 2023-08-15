@@ -1,6 +1,5 @@
 package net.mrboogybam.chatcoords.mixin;
 
-import net.mrboogybam.chatcoords.ChatCoords;
 import net.minecraft.client.gui.screen.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
