@@ -3,10 +3,8 @@ package net.mrboogybam.chatcoords;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
 
 public class ChatCoordsClient implements ClientModInitializer {
@@ -39,8 +37,7 @@ public class ChatCoordsClient implements ClientModInitializer {
                 }
 
                 String coords = "x" + xRounded + ", " + "y" + yRounded + ", " + "z" + zRounded + ", " + currentDimension;
-
-                client.player.sendMessage(Text.of(coords));
+                client.player.networkHandler.sendChatMessage(coords);
             }
         });
     }
