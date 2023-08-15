@@ -13,11 +13,6 @@ public class ChatCoordsClient implements ClientModInitializer {
 
     private static KeyBinding keyBinding;
 
-    public String xRounded;
-    public String yRounded;
-    public String zRounded;
-    public String currentDimension;
-
     @Override
     public void onInitializeClient() {
         keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding(
@@ -28,23 +23,19 @@ public class ChatCoordsClient implements ClientModInitializer {
         ));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            while(keyBinding.wasPressed()) {
+            while (keyBinding.wasPressed()) {
                 assert client.player != null;
-                double x = client.player.getX();
-                double y = client.player.getY();
-                double z = client.player.getZ();
 
-                xRounded = String.format("%.0f", x);
-                yRounded = String.format("%.0f", y);
-                zRounded = String.format("%.0f", z);
+                String xRounded = String.format("%.0f", client.player.getX());
+                String yRounded = String.format("%.0f", client.player.getY());
+                String zRounded = String.format("%.0f", client.player.getZ());
+                String currentDimension = "";
 
                 assert MinecraftClient.getInstance().world != null;
-                if(MinecraftClient.getInstance().world.getRegistryKey().getValue().toString().equals("minecraft:overworld")) {
-                    currentDimension = "Overworld";
-                } else if(MinecraftClient.getInstance().world.getRegistryKey().getValue().toString().equals("minecraft:the_nether")) {
-                    currentDimension = "Nether";
-                } else if(MinecraftClient.getInstance().world.getRegistryKey().getValue().toString().equals("minecraft:the_end")) {
-                    currentDimension = "End";
+                switch (MinecraftClient.getInstance().world.getRegistryKey().getValue().toString()) {
+                    case "minecraft:overworld" -> currentDimension = "Overworld";
+                    case "minecraft:the_nether" -> currentDimension = "Nether";
+                    case "minecraft:the_end" -> currentDimension = "End";
                 }
 
                 String coords = "x" + xRounded + ", " + "y" + yRounded + ", " + "z" + zRounded + ", " + currentDimension;
