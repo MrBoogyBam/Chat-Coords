@@ -36,7 +36,7 @@ public class ChatCoordsClient implements ClientModInitializer {
                     case "minecraft:the_end" -> currentDimension = "End";
                 }
 
-                String coords = "x" + xRounded + ", " + "y" + yRounded + ", " + "z" + zRounded + ", " + currentDimension;
+                String coords = "x" + xRounded + ", y" + yRounded + ", z" + zRounded + ", " + currentDimension;
                 client.player.networkHandler.sendChatMessage(coords);
             }
         });
